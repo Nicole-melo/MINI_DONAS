@@ -89,3 +89,42 @@ function pedirWhatsAppCombo() {
     "_blank"
   );
 }
+
+function mostrarColorRosas() {
+  const color = document.getElementById("colorRosas").value;
+  const otro = document.getElementById("otroColorRosas");
+  const ejemplo = document.getElementById("ejemploRosas");
+
+  otro.style.display = "none";
+  ejemplo.style.display = "none";
+
+  if (color === "Otro") {
+    otro.style.display = "block";
+    otro.placeholder = "Escribe el color de las rosas";
+  }
+
+  if (color === "Combinadas") {
+    ejemplo.style.display = "block";
+  }
+}
+
+function mostrarColorCombo() {
+  const cobertura = document.getElementById("coberturaCombo").value;
+  const color = document.getElementById("colorCombo");
+  const mensaje = document.getElementById("mensajeCombo");
+  const ejemplo = document.getElementById("ejemploCombo");
+
+  color.style.display = "none";
+  mensaje.style.display = "none";
+  ejemplo.style.display = "none";
+
+  if (cobertura === "Otro color") {
+    color.style.display = "block";
+    mensaje.style.display = "block";
+    color.placeholder = "Escribe el color de la cobertura";
+  }
+
+  if (cobertura === "Combinada") {
+    ejemplo.style.display = "block";
+  }
+}
