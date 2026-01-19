@@ -166,20 +166,26 @@ function mostrarColorCombo() {
   const mensaje = document.getElementById("mensajeCombo");
   const ejemplo = document.getElementById("ejemploCombo");
 
+  // Ocultar condicionales
   color.style.display = "none";
-  mensaje.style.display = "none";
   ejemplo.style.display = "none";
+
+  // ✅ MENSAJE SIEMPRE VISIBLE SI HAY COBERTURA
+  if (cobertura) {
+    mensaje.style.display = "block";
+  } else {
+    mensaje.style.display = "none";
+  }
 
   if (cobertura === "Otro color") {
     color.style.display = "block";
-    mensaje.style.display = "block";
-    color.placeholder = "🎨Escribe el color que desees";
+    color.placeholder = "🎨 Escribe el color que deseas";
   }
 
   if (cobertura === "Combinada") {
     color.style.display = "block";
     ejemplo.style.display = "block";
-    color.placeholder = "✨ Escribe los colores que desees";
+    color.placeholder = "✨ Escribe los colores que deseas";
   }
 }
 
@@ -249,6 +255,7 @@ function generarToppings() {
     contenedor.appendChild(select);
   }
 }
+
 
 
 
