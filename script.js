@@ -201,26 +201,29 @@ function mostrarColorCombo() {
   const ejemplo = document.getElementById("ejemploCombo");
   const rosas = document.getElementById("colorRosas").value;
 
-  // Ocultar todo
+  // Ocultar todo primero
   color.classList.add("oculto");
   mensaje.classList.add("oculto");
   ejemplo.classList.add("oculto");
 
+  // Si eligió cualquier cobertura → mostrar mensaje
   if (cobertura !== "") {
     mensaje.classList.remove("oculto");
   }
 
+  // Si es otro color
   if (cobertura === "Otro color") {
     color.classList.remove("oculto");
     color.placeholder = "🎨 Escribe el color de la cobertura";
   }
 
+  // Si es combinada
   if (cobertura === "Combinada") {
     color.classList.remove("oculto");
     color.placeholder = "✨ Escribe los colores de la cobertura";
   }
 
-  // 🔥 Mostrar ejemplo si CUALQUIERA es combinada
+  // Mostrar ejemplo si cualquiera es combinada
   if (cobertura === "Combinada" || rosas === "Combinadas") {
     ejemplo.classList.remove("oculto");
   }
@@ -304,6 +307,7 @@ select.appendChild(sinTopping);
     contenedor.appendChild(select);
   }
 }
+
 
 
 
