@@ -120,25 +120,50 @@ function pedirWhatsAppMiniDonasCobertura() {
 function pedirWhatsAppCombo() {
   const donas = document.getElementById("cantidadDonasCombo").value;
   const rosas = document.getElementById("cantidadRosasCombo").value;
-  const colorRosas = document.getElementById("colorRosas").value;
 
-  if (!donas || !rosas || !colorRosas) {
+  const colorRosas = document.getElementById("colorRosas").value;
+  const otroColorRosas = document.getElementById("otroColorRosas").value;
+
+  const cobertura = document.getElementById("coberturaCombo").value;
+  const colorCobertura = document.getElementById("colorCombo").value;
+
+  const mensajeExtra = document.getElementById("mensajeCombo").value;
+
+  if (!donas || !rosas || !colorRosas || !cobertura) {
     alert("Completa todos los campos");
     return;
   }
 
+  // 🔹 Color final de rosas
+  let rosasFinal = colorRosas;
+  if ((colorRosas === "Otro" || colorRosas === "Combinadas") && otroColorRosas) {
+    rosasFinal = otroColorRosas;
+  }
+
+  // 🔹 Cobertura final
+  let coberturaFinal = cobertura;
+  if ((cobertura === "Otro color" || cobertura === "Combinada") && colorCobertura) {
+    coberturaFinal = colorCobertura;
+  }
+
   let mensaje = `Hola 😊 quiero pedir:
 🌹🍩 Combo eterno
-🍩 Donas: ${donas}
+🍩 Mini donas: ${donas}
 🌹 Rosas: ${rosas}
-🎨 Color de rosas: ${colorRosas}
+🎨 Color de rosas: ${rosasFinal}
+🍫 Cobertura: ${coberturaFinal}
 `;
+
+  if (mensajeExtra) {
+    mensaje += `📝 Detalles: ${mensajeExtra}`;
+  }
 
   window.open(
     "https://wa.me/573112620998?text=" + encodeURIComponent(mensaje),
     "_blank"
   );
 }
+
 
 function mostrarColorRosas() {
   const color = document.getElementById("colorRosas").value;
@@ -255,6 +280,7 @@ function generarToppings() {
     contenedor.appendChild(select);
   }
 }
+
 
 
 
