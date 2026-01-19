@@ -24,15 +24,27 @@ function pedirWhatsAppMiniDonas() {
 // ================= COBERTURA =================
 function mostrarColorOtro() {
   const cobertura = document.getElementById("cobertura").value;
-  document.getElementById("colorOtro").style.display =
-    cobertura === "Otro color" || cobertura === "Combinada" ? "block" : "none";
+  const color = document.getElementById("colorOtro");
+  const mensaje = document.getElementById("mensajeNormal");
+  const ejemplo = document.getElementById("ejemploCombinada");
 
-  document.getElementById("ejemploCombinada").style.display =
-    cobertura === "Combinada" ? "block" : "none";
+  color.style.display = "none";
+  mensaje.style.display = "none";
+  ejemplo.style.display = "none";
 
-  document.getElementById("mensajeNormal").style.display =
-    cobertura && cobertura !== "Combinada" ? "block" : "none";
+  if (cobertura === "Otro color") {
+    color.style.display = "block";
+    mensaje.style.display = "block";
+    color.placeholder = "Escribe el color elegido";
+  }
+
+  if (cobertura === "Combinada") {
+    color.style.display = "block";
+    ejemplo.style.display = "block";
+    color.placeholder = "Ej: 4 blancas + 4 rosadas";
+  }
 }
+
 
 function pedirWhatsAppMiniDonasCobertura() {
   const cantidad = document.getElementById("cantidadCobertura").value;
@@ -104,9 +116,11 @@ function mostrarColorRosas() {
   }
 
   if (color === "Combinadas") {
-    ejemplo.style.display = "block";
+    otro.style.display = "block";
+    otro.placeholder = "Ej: 3 rojas + 3 blancas";
   }
 }
+
 
 function mostrarColorCombo() {
   const cobertura = document.getElementById("coberturaCombo").value;
@@ -125,6 +139,10 @@ function mostrarColorCombo() {
   }
 
   if (cobertura === "Combinada") {
+    color.style.display = "block";
     ejemplo.style.display = "block";
+    color.placeholder = "Ej: 4 blancas + 4 rosadas";
   }
 }
+
+
