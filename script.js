@@ -191,15 +191,14 @@ function mostrarColorCombo() {
   const mensaje = document.getElementById("mensajeCombo");
   const ejemplo = document.getElementById("ejemploCombo");
 
-  // Ocultar condicionales
+  // Ocultar todo
   color.style.display = "none";
   ejemplo.style.display = "none";
+  mensaje.style.display = "none";
 
-  // ✅ MENSAJE SIEMPRE VISIBLE SI HAY COBERTURA
+  // Si hay cobertura, mostrar mensaje
   if (cobertura) {
     mensaje.style.display = "block";
-  } else {
-    mensaje.style.display = "none";
   }
 
   if (cobertura === "Otro color") {
@@ -213,6 +212,8 @@ function mostrarColorCombo() {
     color.placeholder = "✨ Escribe los colores que deseas";
   }
 }
+
+
 
 function generarSalsas() {
   const cantidad = document.getElementById("numSalsas").value;
@@ -280,6 +281,7 @@ function generarToppings() {
     contenedor.appendChild(select);
   }
 }
+
 
 
 
