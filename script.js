@@ -1,25 +1,55 @@
 // ================= MINI DONAS =================
-function pedirWhatsAppMiniDonas() {
-  const cantidad = document.getElementById("cantidad1").value;
-  const nota = document.getElementById("nota1").value;
+function pedirWhatsAppMiniDonasTopping() {
+  const cantidad = document.getElementById("cantidadTopping").value;
+  const salsas = document.querySelectorAll("#contenedorSalsas select");
+  const toppings = document.querySelectorAll("#contenedorToppings select");
+  const nota = document.getElementById("notaTopping").value;
 
   if (!cantidad) {
-    alert("Completa todos los campos");
+    alert("Ingresa la cantidad");
     return;
   }
 
   let mensaje = `Hola 😊 quiero pedir:
-🍩 Mini donas
+🍩 Mini donas con topping
 📦 Cantidad: ${cantidad}
 `;
 
-  if (nota) mensaje += `📝 Detalles: ${nota}`;
+  // ===== SALSAS =====
+  if (salsas.length > 0) {
+    mensaje += `🍯 Salsas:\n`;
+    salsas.forEach((select, index) => {
+      if (!select.value) {
+        alert(`Selecciona la salsa ${index + 1}`);
+        return;
+      }
+      mensaje += `  - ${select.value}\n`;
+    });
+  }
+
+  // ===== TOPPINGS =====
+  if (toppings.length > 0) {
+    mensaje += `🍭 Toppings:\n`;
+    toppings.forEach((select, index) => {
+      if (!select.value) {
+        alert(`Selecciona el topping ${index + 1}`);
+        return;
+      }
+      mensaje += `  - ${select.value}\n`;
+    });
+  }
+
+  // ===== NOTA =====
+  if (nota) {
+    mensaje += `📝 Detalles: ${nota}`;
+  }
 
   window.open(
     "https://wa.me/573112620998?text=" + encodeURIComponent(mensaje),
     "_blank"
   );
 }
+
 
 // ================= COBERTURA =================
 function mostrarColorOtro() {
@@ -211,6 +241,7 @@ function generarToppings() {
     contenedor.appendChild(select);
   }
 }
+
 
 
 
