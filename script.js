@@ -169,7 +169,7 @@ function mostrarColorRosas() {
   const otro = document.getElementById("otroColorRosas");
   const ejemplo = document.getElementById("ejemploCombo");
 
-  // ocultar todo
+  // Ocultar todo primero
   otro.classList.add("oculto");
   ejemplo.classList.add("oculto");
 
@@ -181,9 +181,10 @@ function mostrarColorRosas() {
   if (color === "Combinadas") {
     otro.classList.remove("oculto");
     otro.placeholder = "✨ Escribe los colores que desees";
-    ejemplo.classList.remove("oculto"); // solo aquí aparece
+    ejemplo.classList.remove("oculto");
   }
 }
+
 
 
 
@@ -283,6 +284,7 @@ function generarToppings() {
     contenedor.appendChild(select);
   }
 }
+
 
 
 
