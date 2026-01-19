@@ -145,6 +145,35 @@ function mostrarColorCombo() {
   }
 }
 
+function generarSalsas() {
+  const cantidad = document.getElementById("numSalsas").value;
+  const contenedor = document.getElementById("contenedorSalsas");
+
+  contenedor.innerHTML = "";
+
+  for (let i = 1; i <= cantidad; i++) {
+    const input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = `Salsa ${i} (ej: chocolate)`;
+    contenedor.appendChild(input);
+  }
+}
+
+function generarToppings() {
+  const cantidad = document.getElementById("numToppings").value;
+  const contenedor = document.getElementById("contenedorToppings");
+
+  contenedor.innerHTML = "";
+
+  for (let i = 1; i <= cantidad; i++) {
+    const input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = `Topping ${i} (ej: chispas)`;
+    contenedor.appendChild(input);
+  }
+}
+
+
 
 
 
