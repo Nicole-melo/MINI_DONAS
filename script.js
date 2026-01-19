@@ -1,5 +1,5 @@
 // ================= MINI DONAS =================
-function pedirWhatsAppMiniDonasTopping() {
+function pedirWhatsAppMiniDonas() {
   const cantidad = document.getElementById("cantidadTopping").value;
   const salsas = document.querySelectorAll("#contenedorSalsas select");
   const toppings = document.querySelectorAll("#contenedorToppings select");
