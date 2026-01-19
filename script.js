@@ -168,19 +168,21 @@ function pedirWhatsAppCombo() {
 function mostrarColorRosas() {
   const color = document.getElementById("colorRosas").value;
   const otro = document.getElementById("otroColorRosas");
-  const ejemplo = document.getElementById("ejemploRosas");
+  const ejemplo = document.getElementById("ejemploCombo");
 
+  // Ocultar todo primero
   otro.style.display = "none";
   ejemplo.style.display = "none";
 
   if (color === "Otro") {
     otro.style.display = "block";
-    otro.placeholder = "🎨Escribe el color que desees";
+    otro.placeholder = "🎨 Escribe el color que desees";
   }
 
   if (color === "Combinadas") {
     otro.style.display = "block";
     otro.placeholder = "✨ Escribe los colores que desees";
+    ejemplo.style.display = "block"; // 👈 mostrar ejemplo combinado
   }
 }
 
@@ -281,6 +283,7 @@ function generarToppings() {
     contenedor.appendChild(select);
   }
 }
+
 
 
 
