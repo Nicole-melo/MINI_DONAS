@@ -151,11 +151,30 @@ function generarSalsas() {
 
   contenedor.innerHTML = "";
 
+  const opcionesSalsas = [
+    "Chocolate",
+    "Arequipe",
+    "Fresa",
+    "Caramelo",
+    "Leche condensada"
+  ];
+
   for (let i = 1; i <= cantidad; i++) {
-    const input = document.createElement("input");
-    input.type = "text";
-    input.placeholder = `Salsa ${i} (ej: chocolate)`;
-    contenedor.appendChild(input);
+    const select = document.createElement("select");
+
+    const opcionDefault = document.createElement("option");
+    opcionDefault.textContent = `🍯 Salsa ${i}`;
+    opcionDefault.value = "";
+    select.appendChild(opcionDefault);
+
+    opcionesSalsas.forEach(salsa => {
+      const option = document.createElement("option");
+      option.value = salsa;
+      option.textContent = salsa;
+      select.appendChild(option);
+    });
+
+    contenedor.appendChild(select);
   }
 }
 
@@ -165,13 +184,35 @@ function generarToppings() {
 
   contenedor.innerHTML = "";
 
+  const opcionesToppings = [
+    "Chispas de chocolate",
+    "Chocolatina",
+    "Oreo",
+    "Maní",
+    "Coco",
+    "Gomitas"
+  ];
+
   for (let i = 1; i <= cantidad; i++) {
-    const input = document.createElement("input");
-    input.type = "text";
-    input.placeholder = `Topping ${i} (ej: chispas)`;
-    contenedor.appendChild(input);
+    const select = document.createElement("select");
+
+    const opcionDefault = document.createElement("option");
+    opcionDefault.textContent = `🍭 Topping ${i}`;
+    opcionDefault.value = "";
+    select.appendChild(opcionDefault);
+
+    opcionesToppings.forEach(topping => {
+      const option = document.createElement("option");
+      option.value = topping;
+      option.textContent = topping;
+      select.appendChild(option);
+    });
+
+    contenedor.appendChild(select);
   }
 }
+
+
 
 
 
