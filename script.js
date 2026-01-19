@@ -4,7 +4,7 @@ function pedirWhatsAppMiniDonas() {
   const nota = document.getElementById("nota1").value;
 
   if (!cantidad) {
-    alert("Ingresa la cantidad");
+    alert("Completa todos los campos");
     return;
   }
 
@@ -53,7 +53,7 @@ function pedirWhatsAppMiniDonasCobertura() {
   const nota = document.getElementById("mensajeNormal").value;
 
   if (!cantidad || !cobertura) {
-    alert("Completa los datos");
+    alert("Completa todos los campos");
     return;
   }
 
@@ -144,6 +144,7 @@ function mostrarColorCombo() {
     color.placeholder = "✨ Escribe los colores que desees";
   }
 }
+
 
 
 
