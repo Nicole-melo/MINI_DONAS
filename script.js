@@ -60,22 +60,27 @@ function mostrarColorOtro() {
 
   // Ocultar todo primero
   color.style.display = "none";
-  mensaje.style.display = "none";
   ejemplo.style.display = "none";
+
+  // ✅ EL MENSAJE SIEMPRE SE MUESTRA SI HAY COBERTURA
+  if (cobertura) {
+    mensaje.style.display = "block";
+  } else {
+    mensaje.style.display = "none";
+  }
 
   if (cobertura === "Otro color") {
     color.style.display = "block";
-    mensaje.style.display = "block";
     color.placeholder = "🎨 Escribe el color que deseas";
   }
 
   if (cobertura === "Combinada") {
     color.style.display = "block";
-    mensaje.style.display = "block";   // ✅ AQUI ESTABA EL ERROR
     ejemplo.style.display = "block";
     color.placeholder = "✨ Escribe los colores que deseas";
   }
 }
+
 
 
 
@@ -244,6 +249,7 @@ function generarToppings() {
     contenedor.appendChild(select);
   }
 }
+
 
 
 
