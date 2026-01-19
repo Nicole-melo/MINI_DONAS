@@ -206,3 +206,14 @@ body::before {
   color: #a35c75;
   margin-top: 8px;
 }
+
+.ejemploCombinada {
+  background: #ffeef4;
+  border-radius: 15px;
+  padding: 12px;
+  font-size: 14px;
+  color: #c94a7c;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  margin-top: 10px;
+}
