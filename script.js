@@ -58,6 +58,7 @@ function mostrarColorOtro() {
   const mensaje = document.getElementById("mensajeNormal");
   const ejemplo = document.getElementById("ejemploCombinada");
 
+  // Ocultar todo primero
   color.style.display = "none";
   mensaje.style.display = "none";
   ejemplo.style.display = "none";
@@ -65,15 +66,17 @@ function mostrarColorOtro() {
   if (cobertura === "Otro color") {
     color.style.display = "block";
     mensaje.style.display = "block";
-    color.placeholder = "🎨Escribe el color que desees";
+    color.placeholder = "🎨 Escribe el color que deseas";
   }
 
   if (cobertura === "Combinada") {
     color.style.display = "block";
+    mensaje.style.display = "block";   // ✅ AQUI ESTABA EL ERROR
     ejemplo.style.display = "block";
-    color.placeholder = "✨ Escribe los colores que desees";
+    color.placeholder = "✨ Escribe los colores que deseas";
   }
 }
+
 
 
 function pedirWhatsAppMiniDonasCobertura() {
@@ -241,6 +244,7 @@ function generarToppings() {
     contenedor.appendChild(select);
   }
 }
+
 
 
 
