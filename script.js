@@ -247,6 +247,11 @@ function generarSalsas() {
     opcionDefault.value = "";
     select.appendChild(opcionDefault);
 
+    const sinSalsa = document.createElement("option");
+sinSalsa.value = "Sin salsa";
+sinSalsa.textContent = "❌ Sin salsa";
+select.appendChild(sinSalsa);
+    
     opcionesSalsas.forEach(salsa => {
       const option = document.createElement("option");
       option.value = salsa;
@@ -281,6 +286,11 @@ function generarToppings() {
     opcionDefault.value = "";
     select.appendChild(opcionDefault);
 
+    const sinTopping = document.createElement("option");
+sinTopping.value = "Sin topping";
+sinTopping.textContent = "❌ Sin topping";
+select.appendChild(sinTopping);
+
     opcionesToppings.forEach(topping => {
       const option = document.createElement("option");
       option.value = topping;
@@ -291,6 +301,7 @@ function generarToppings() {
     contenedor.appendChild(select);
   }
 }
+
 
 
 
