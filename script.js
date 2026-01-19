@@ -35,13 +35,13 @@ function mostrarColorOtro() {
   if (cobertura === "Otro color") {
     color.style.display = "block";
     mensaje.style.display = "block";
-    color.placeholder = "Escribe el color elegido";
+    color.placeholder = "🎨Escribe el color que desees";
   }
 
   if (cobertura === "Combinada") {
     color.style.display = "block";
     ejemplo.style.display = "block";
-    color.placeholder = "Ej: 4 blancas + 4 rosadas";
+    color.placeholder = "✨ Escribe los colores que desees";
   }
 }
 
@@ -117,7 +117,7 @@ function mostrarColorRosas() {
 
   if (color === "Combinadas") {
     otro.style.display = "block";
-    otro.placeholder = "🎨Escribe los colores que desees";
+    otro.placeholder = "✨ Escribe los colores que desees";
   }
 }
 
@@ -141,9 +141,10 @@ function mostrarColorCombo() {
   if (cobertura === "Combinada") {
     color.style.display = "block";
     ejemplo.style.display = "block";
-    color.placeholder = "🎨Escribe los colores que desees";
+    color.placeholder = "✨ Escribe los colores que desees";
   }
 }
+
 
 
 
