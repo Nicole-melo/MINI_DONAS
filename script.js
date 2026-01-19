@@ -169,7 +169,7 @@ function mostrarColorRosas() {
   const otro = document.getElementById("otroColorRosas");
   const ejemplo = document.getElementById("ejemploCombo");
 
-  // Ocultar todo primero
+  // Ocultar todo
   otro.style.display = "none";
   ejemplo.style.display = "none";
 
@@ -181,9 +181,10 @@ function mostrarColorRosas() {
   if (color === "Combinadas") {
     otro.style.display = "block";
     otro.placeholder = "✨ Escribe los colores que desees";
-    ejemplo.style.display = "block"; // 👈 mostrar ejemplo combinado
+    ejemplo.style.display = "block"; // solo aquí
   }
 }
+
 
 
 function mostrarColorCombo() {
@@ -192,12 +193,11 @@ function mostrarColorCombo() {
   const mensaje = document.getElementById("mensajeCombo");
   const ejemplo = document.getElementById("ejemploCombo");
 
-  // Ocultar todo
+  // Ocultar condicionales
   color.style.display = "none";
-  ejemplo.style.display = "none";
   mensaje.style.display = "none";
+  ejemplo.style.display = "none";
 
-  // Si hay cobertura, mostrar mensaje
   if (cobertura) {
     mensaje.style.display = "block";
   }
@@ -209,8 +209,8 @@ function mostrarColorCombo() {
 
   if (cobertura === "Combinada") {
     color.style.display = "block";
-    ejemplo.style.display = "block";
     color.placeholder = "✨ Escribe los colores que deseas";
+    ejemplo.style.display = "block"; // solo aquí
   }
 }
 
@@ -282,6 +282,7 @@ function generarToppings() {
     contenedor.appendChild(select);
   }
 }
+
 
 
 
