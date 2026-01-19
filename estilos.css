@@ -198,3 +198,11 @@ body::before {
   z-index: -1;
 }
 
+.ejemplo {
+  background: #ffe6ef;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 14px;
+  color: #a35c75;
+  margin-top: 8px;
+}
