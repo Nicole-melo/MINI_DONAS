@@ -165,25 +165,30 @@ function pedirWhatsAppCombo() {
 
 
 function mostrarColorRosas() {
-  const color = document.getElementById("colorRosas").value;
+  const rosas = document.getElementById("colorRosas").value;
   const otro = document.getElementById("otroColorRosas");
   const ejemplo = document.getElementById("ejemploCombo");
+  const cobertura = document.getElementById("coberturaCombo").value;
 
-  // Ocultar todo
   otro.classList.add("oculto");
   ejemplo.classList.add("oculto");
 
-  if (color === "Otro") {
+  if (rosas === "Otro") {
     otro.classList.remove("oculto");
-    otro.placeholder = "🎨 Escribe el color que desees";
+    otro.placeholder = "🎨 Escribe el color de las rosas";
   }
 
-  if (color === "Combinadas") {
+  if (rosas === "Combinadas") {
     otro.classList.remove("oculto");
-    otro.placeholder = "✨ Escribe los colores que desees";
-    ejemplo.classList.remove("oculto"); // rosas combinadas
+    otro.placeholder = "✨ Escribe los colores de las rosas";
+  }
+
+  // 🔥 Mostrar ejemplo si CUALQUIERA es combinada
+  if (rosas === "Combinadas" || cobertura === "Combinada") {
+    ejemplo.classList.remove("oculto");
   }
 }
+
 
 
 
@@ -194,25 +199,30 @@ function mostrarColorCombo() {
   const color = document.getElementById("colorCombo");
   const mensaje = document.getElementById("mensajeCombo");
   const ejemplo = document.getElementById("ejemploCombo");
+  const rosas = document.getElementById("colorRosas").value;
 
-  // Ocultar condicionales
-  color.style.display = "none";
-  mensaje.style.display = "none";
-  ejemplo.style.display = "none";
+  // Ocultar todo
+  color.classList.add("oculto");
+  mensaje.classList.add("oculto");
+  ejemplo.classList.add("oculto");
 
-  if (cobertura) {
-    mensaje.style.display = "block";
+  if (cobertura !== "") {
+    mensaje.classList.remove("oculto");
   }
 
   if (cobertura === "Otro color") {
-    color.style.display = "block";
-    color.placeholder = "🎨 Escribe el color que deseas";
+    color.classList.remove("oculto");
+    color.placeholder = "🎨 Escribe el color de la cobertura";
   }
 
   if (cobertura === "Combinada") {
-    color.style.display = "block";
-    color.placeholder = "✨ Escribe los colores que deseas";
-    ejemplo.style.display = "block"; // solo aquí
+    color.classList.remove("oculto");
+    color.placeholder = "✨ Escribe los colores de la cobertura";
+  }
+
+  // 🔥 Mostrar ejemplo si CUALQUIERA es combinada
+  if (cobertura === "Combinada" || rosas === "Combinadas") {
+    ejemplo.classList.remove("oculto");
   }
 }
 
@@ -294,6 +304,7 @@ select.appendChild(sinTopping);
     contenedor.appendChild(select);
   }
 }
+
 
 
 
