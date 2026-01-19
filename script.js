@@ -60,13 +60,12 @@ function mostrarColorOtro() {
 
   // Ocultar todo primero
   color.style.display = "none";
+  mensaje.style.display = "none";
   ejemplo.style.display = "none";
 
-  // ✅ EL MENSAJE SIEMPRE SE MUESTRA SI HAY COBERTURA
+  // Si hay cualquier cobertura → mostrar mensaje
   if (cobertura) {
     mensaje.style.display = "block";
-  } else {
-    mensaje.style.display = "none";
   }
 
   if (cobertura === "Otro color") {
@@ -76,8 +75,8 @@ function mostrarColorOtro() {
 
   if (cobertura === "Combinada") {
     color.style.display = "block";
-    ejemplo.style.display = "block";
     color.placeholder = "✨ Escribe los colores que deseas";
+    ejemplo.style.display = "block";
   }
 }
 
@@ -283,6 +282,7 @@ function generarToppings() {
     contenedor.appendChild(select);
   }
 }
+
 
 
 
