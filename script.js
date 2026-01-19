@@ -76,7 +76,7 @@ function mostrarColorOtro() {
   if (cobertura === "Combinada") {
     color.style.display = "block";
     color.placeholder = "✨ Escribe los colores que deseas";
-    ejemplo.style.display = "block";
+    ejemplo.style.display = "none";
   }
 }
 
@@ -282,6 +282,7 @@ function generarToppings() {
     contenedor.appendChild(select);
   }
 }
+
 
 
 
