@@ -45,7 +45,7 @@ function pedirWhatsAppMiniDonas() {
   }
 
   window.open(
-    "https://wa.me/573112620998?text=" + encodeURIComponent(mensaje),
+    "https://wa.me/573202471967?text=" + encodeURIComponent(mensaje),
     "_blank"
   );
 }
@@ -110,7 +110,7 @@ function pedirWhatsAppMiniDonasCobertura() {
   if (nota) mensaje += `📝 Detalles: ${nota}`;
 
   window.open(
-    "https://wa.me/573112620998?text=" + encodeURIComponent(mensaje),
+    "https://wa.me/573202471967?text=" + encodeURIComponent(mensaje),
     "_blank"
   );
 }
@@ -158,7 +158,7 @@ function pedirWhatsAppCombo() {
   }
 
   window.open(
-    "https://wa.me/573112620998?text=" + encodeURIComponent(mensaje),
+    "https://wa.me/573202471967?text=" + encodeURIComponent(mensaje),
     "_blank"
   );
 }
@@ -307,6 +307,7 @@ select.appendChild(sinTopping);
     contenedor.appendChild(select);
   }
 }
+
 
 
 
