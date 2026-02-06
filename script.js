@@ -232,51 +232,58 @@ function mostrarColorCombo() {
 
 
 // ===== MINI DONAS POR COMBO =====
-function actualizarMiniDonas() {
-  const cantidad = document.getElementById("cantidad1").value;
+function generarSalsas() {
+  const combo = document.getElementById("combo").value;
+  const contSalsas = document.getElementById("contenedor-salsas");
+  const contToppings = document.getElementById("contenedor-toppings");
 
-  const reglas = {
-    4:  { salsas: 1, toppings: 1 },
-    6:  { salsas: 2, toppings: 2 },
-    8:  { salsas: 2, toppings: 3 },
-    10: { salsas: 3, toppings: 3 },
-    12: { salsas: 3, toppings: 4 },
-    14: { salsas: 4, toppings: 4 }
-  };
-
-  const contSalsas = document.getElementById("contenedorSalsas");
-  const contToppings = document.getElementById("contenedorToppings");
-
+  // limpiar antes de volver a crear
   contSalsas.innerHTML = "";
   contToppings.innerHTML = "";
 
-  if (!reglas[cantidad]) return;
+  if (combo === "") return;
 
-  generarSelects(
-    contSalsas,
-    reglas[cantidad].salsas,
-    "🍯 Salsa",
-    ["Chocolate", "Arequipe", "Caramelo", "Leche condensada"]
-  );
+  // reglas por combo
+  const reglas = {
+    4: { salsas: 1, toppings: 1 },
+    6: { salsas: 2, toppings: 2 },
+    8: { salsas: 3, toppings: 2 },
+    10:{ salsas: 3, toppings: 3 },
+    12:{ salsas: 4, toppings: 3 },
+    14:{ salsas: 4, toppings: 4 }
+  };
 
-  generarSelects(
-    contToppings,
-    reglas[cantidad].toppings,
-    "🍭 Topping",
-    ["Chispas de chocolate", "Oreo", "Gomitas", "Minichips", "M&M", "Gragea"]
-  );
-}
+  const { salsas, toppings } = reglas[combo];
 
-function generarSelects(contenedor, cantidad, texto, opciones) {
-  for (let i = 1; i <= cantidad; i++) {
-    const select = document.createElement("select");
-    select.innerHTML = `<option value="">${texto} ${i}</option>`;
+  // opciones disponibles
+  const listaSalsas = [
+    "Chocolate",
+    "Arequipe",
+    "Fresa",
+    "Chocolate blanco"
+  ];
 
-    opciones.forEach(op => {
-      select.innerHTML += `<option value="${op}">${op}</option>`;
-    });
+  const listaToppings = [
+    "Chips de chocolate",
+    "Oreo",
+    "Chocolatina",
+    "Maní",
+    "Grageas"
+  ];
 
-    contenedor.appendChild(select);
+  // crear selects de salsas
+  for (let i = 1; i <= salsas; i++) {
+    let select = document.createElement("select");
+    select.innerHTML = `<option value="">Salsa ${i}</option>` +
+      listaSalsas.map(s => `<option value="${s}">${s}</option>`).join("");
+    contSalsas.appendChild(select);
+  }
+
+  // crear selects de toppings
+  for (let i = 1; i <= toppings; i++) {
+    let select = document.createElement("select");
+    select.innerHTML = `<option value="">Topping ${i}</option>` +
+      listaToppings.map(t => `<option value="${t}">${t}</option>`).join("");
+    contToppings.appendChild(select);
   }
 }
-
