@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Donas San Valentín 💘</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<div class="fondo-borroso"></div>
+
+<h1 class="titulo">💘 Mini Donas San Valentín 🍩</h1>
+<p class="subtitulo">Edición especial · Pedidos por WhatsApp</p>
+
+<div class="catalogo">
+
+  <div class="card">
+    <img src="img/Mini donas cubiertas con chocolate.jpg">
+
+    <h3>🍩 Mini Donas con Cobertura 💝</h3>
+    <p class="elige-opciones">Perfectas para regalar amor 💕</p>
+
+    <input type="number" id="cantidadSV" placeholder="Cantidad de mini donas" min="1">
+
+    <select id="coberturaSV">
+      <option value="">🍫 Elige la cobertura</option>
+      <option value="Chocolate negro">🍫 Chocolate negro</option>
+      <option value="Chocolate blanco">🤍 Chocolate blanco</option>
+      <option value="Rosado">💗 Rosado</option>
+      <option value="Rojo">❤️ Rojo</option>
+      <option value="Combinadas">✨ Combinadas</option>
+    </select>
+
+    <textarea
+      id="notaSV"
+      placeholder="Ejemplo: 6 donas → 3 rosadas + 3 blancas 💗🤍"
+    ></textarea>
+
+    <button class="btn-morado" onclick="pedirWhatsAppSanValentin()">
+      Pedir por WhatsApp 💘
+    </button>
+
+  </div>
+
+</div>
+
+<script src="san-valentin.js"></script>
+</body>
+</html>
