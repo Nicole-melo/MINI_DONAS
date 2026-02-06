@@ -24,27 +24,28 @@
     min="1"
   >
 
-  <!-- Cobertura -->
-  <select id="coberturaSV" onchange="mostrarEjemploSV()">
-    <option value="">🍫 Elige la cobertura</option>
-    <option value="Chocolate negro">🍫 Chocolate negro</option>
-    <option value="Chocolate blanco">🤍 Chocolate blanco</option>
-    <option value="Rosado">💗 Rosado</option>
-    <option value="Rojo">❤️ Rojo</option>
-    <option value="Combinadas">✨ Combinadas</option>
-  </select>
+<!-- Cobertura -->
+<select id="coberturaSV" onchange="mostrarEjemploSV()">
+  <option value="">🍫 Elige la cobertura</option>
+  <option value="Chocolate negro">🍫 Chocolate negro</option>
+  <option value="Chocolate blanco">🤍 Chocolate blanco</option>
+  <option value="Rosado">💗 Rosado</option>
+  <option value="Rojo">❤️ Rojo</option>
+  <option value="Combinadas">✨ Combinadas</option>
+</select>
 
-  <!-- EJEMPLO (NO editable) -->
-  <div class="ejemploCombinada oculto" id="ejemploSV">
-    <strong>Ejemplo:</strong><br>
-    6 mini donas → 3 rosadas + 3 blancas 💗🤍
-  </div>
+<!-- EJEMPLO SOLO VISUAL -->
+<div id="ejemploSV" class="ejemploCombinada oculto">
+  <strong>Ejemplo:</strong><br>
+  6 mini donas → 3 rosadas + 3 blancas 💗🤍
+</div>
 
-  <!-- MENSAJE PERSONALIZADO (SÍ editable) -->
-  <textarea
-    id="mensajeSV"
-    placeholder="💌 Escribe aquí tu mensaje personalizado (opcional)"
-  ></textarea>
+<!-- MENSAJE PERSONALIZADO -->
+<textarea
+  id="mensajeSV"
+  placeholder="💌 Escribe aquí tu mensaje personalizado (opcional)"
+></textarea>
+></textarea>
 
   <button class="btn-morado" onclick="pedirWhatsAppSanValentin()">
     Pedir por WhatsApp
