@@ -1,25 +1,39 @@
+function mostrarEjemploSV() {
+  const cobertura = document.getElementById("coberturaSV").value;
+  const ejemplo = document.getElementById("ejemploSV");
+
+  // Ocultar siempre primero
+  ejemplo.classList.add("oculto");
+
+  // Mostrar solo si es combinadas
+  if (cobertura === "Combinadas") {
+    ejemplo.classList.remove("oculto");
+  }
+}
+
 function pedirWhatsAppSanValentin() {
   const cantidad = document.getElementById("cantidadSV").value;
   const cobertura = document.getElementById("coberturaSV").value;
-  const nota = document.getElementById("notaSV").value;
+  const mensaje = document.getElementById("mensajeSV").value;
 
   if (!cantidad || !cobertura) {
-    alert("Completa todos los campos");
+    alert("Completa la cantidad y la cobertura 💕");
     return;
   }
 
-  let mensaje = `Hola 😊 quiero pedir:
-💘 Mini Donas San Valentín
+  let texto = `Hola 😊 quiero pedir:
+💘 Mini donas San Valentín
 🍩 Cantidad: ${cantidad}
 🍫 Cobertura: ${cobertura}
 `;
 
-  if (nota) {
-    mensaje += `📝 Detalles: ${nota}`;
+  if (mensaje) {
+    texto += `💌 Mensaje personalizado: ${mensaje}`;
   }
 
   window.open(
-    "https://wa.me/573202471967?text=" + encodeURIComponent(mensaje),
+    "https://wa.me/573202471967?text=" + encodeURIComponent(texto),
     "_blank"
   );
 }
+
