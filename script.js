@@ -231,108 +231,52 @@ function mostrarColorCombo() {
 
 
 
-function generarSalsas() {
-  const cantidad = document.getElementById("numSalsas").value;
-  const contenedor = document.getElementById("contenedorSalsas");
+// ===== MINI DONAS POR COMBO =====
+function actualizarMiniDonas() {
+  const cantidad = document.getElementById("cantidad1").value;
 
-  contenedor.innerHTML = "";
+  const reglas = {
+    4:  { salsas: 1, toppings: 1 },
+    6:  { salsas: 2, toppings: 2 },
+    8:  { salsas: 2, toppings: 3 },
+    10: { salsas: 3, toppings: 3 },
+    12: { salsas: 3, toppings: 4 },
+    14: { salsas: 4, toppings: 4 }
+  };
 
-  const opcionesSalsas = [
-    "Chocolate",
-    "Arequipe",
-    "Caramelo",
-    "Leche condensada"
-  ];
+  const contSalsas = document.getElementById("contenedorSalsas");
+  const contToppings = document.getElementById("contenedorToppings");
 
+  contSalsas.innerHTML = "";
+  contToppings.innerHTML = "";
+
+  if (!reglas[cantidad]) return;
+
+  generarSelects(
+    contSalsas,
+    reglas[cantidad].salsas,
+    "🍯 Salsa",
+    ["Chocolate", "Arequipe", "Caramelo", "Leche condensada"]
+  );
+
+  generarSelects(
+    contToppings,
+    reglas[cantidad].toppings,
+    "🍭 Topping",
+    ["Chispas de chocolate", "Oreo", "Gomitas", "Minichips", "M&M", "Gragea"]
+  );
+}
+
+function generarSelects(contenedor, cantidad, texto, opciones) {
   for (let i = 1; i <= cantidad; i++) {
     const select = document.createElement("select");
+    select.innerHTML = `<option value="">${texto} ${i}</option>`;
 
-    const opcionDefault = document.createElement("option");
-    opcionDefault.textContent = `🍯 Salsa ${i}`;
-    opcionDefault.value = "";
-    select.appendChild(opcionDefault);
-
-    const sinSalsa = document.createElement("option");
-sinSalsa.value = "Sin salsa";
-sinSalsa.textContent = "❌ Sin salsa";
-select.appendChild(sinSalsa);
-    
-    opcionesSalsas.forEach(salsa => {
-      const option = document.createElement("option");
-      option.value = salsa;
-      option.textContent = salsa;
-      select.appendChild(option);
+    opciones.forEach(op => {
+      select.innerHTML += `<option value="${op}">${op}</option>`;
     });
 
     contenedor.appendChild(select);
   }
 }
-
-function generarToppings() {
-  const cantidad = document.getElementById("numToppings").value;
-  const contenedor = document.getElementById("contenedorToppings");
-
-  contenedor.innerHTML = "";
-
-  const opcionesToppings = [
-    "Chispas de chocolate",
-    "Oreo",
-    "Gomitas",
-    "Minichips",
-    "M&M",
-    "Gragea"
-  ];
-
-  for (let i = 1; i <= cantidad; i++) {
-    const select = document.createElement("select");
-
-    const opcionDefault = document.createElement("option");
-    opcionDefault.textContent = `🍭 Topping ${i}`;
-    opcionDefault.value = "";
-    select.appendChild(opcionDefault);
-
-    const sinTopping = document.createElement("option");
-sinTopping.value = "Sin topping";
-sinTopping.textContent = "❌ Sin topping";
-select.appendChild(sinTopping);
-
-    opcionesToppings.forEach(topping => {
-      const option = document.createElement("option");
-      option.value = topping;
-      option.textContent = topping;
-      select.appendChild(option);
-    });
-
-    contenedor.appendChild(select);
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
