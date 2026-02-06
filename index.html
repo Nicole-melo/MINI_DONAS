@@ -21,29 +21,37 @@
 
 
 
- <div class="card">
-    <img src="img/Minidonitas mix.jpg">
+<div class="card">
+  <img src="img/Minidonitas mix.jpg">
 
-    <h3>🍩Mini Donas Con Salsas🍯 Y Topping🍭</h3>
-    <p class="elige-opciones">Elige tus opciones💕</p>
+  <h3>🍩 Mini Donas con Salsas 🍯 y Toppings 🍭</h3>
+  <p class="elige-opciones">Elige tu combo 💕</p>
 
-    <input type="number" id="cantidad1" placeholder="Cantidad de mini donas" min="1">
+  <!-- CANTIDAD -->
+  <select id="cantidad1" onchange="actualizarMiniDonas()">
+    <option value="">🍩 Elige la cantidad</option>
+    <option value="4">4 mini donas</option>
+    <option value="6">6 mini donas</option>
+    <option value="8">8 mini donas</option>
+    <option value="10">10 mini donas</option>
+    <option value="12">12 mini donas</option>
+    <option value="14">14 mini donas</option>
+  </select>
 
-<input type="number" id="numSalsas" placeholder="¿Cuántas salsas?" min="0" max="4" onchange="generarSalsas()">
+  <!-- SALSAS -->
+  <div id="contenedorSalsas"></div>
 
-<div id="contenedorSalsas"></div>
+  <!-- TOPPINGS -->
+  <div id="contenedorToppings"></div>
 
-<input type="number" id="numToppings" placeholder="¿Cuántos toppings?" min="0" max="6" onchange="generarToppings()">
+  <!-- NOTA -->
+  <textarea id="nota1" placeholder="Personalizado (colores, mensaje o detalles especiales)"></textarea>
 
-<div id="contenedorToppings"></div>
-
-<textarea id="nota1" placeholder="Personalizado (Aclarar mensaje, colores o detalles especiales)"></textarea>
-
-<button type="button" class="btn-morado" onclick="pedirWhatsAppMiniDonas()">
-  Pedir por WhatsApp
-</button>
-
+  <button class="btn-morado" onclick="pedirWhatsAppMiniDonas()">
+    Pedir por WhatsApp
+  </button>
 </div>
+
 
 
 
@@ -199,6 +207,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
