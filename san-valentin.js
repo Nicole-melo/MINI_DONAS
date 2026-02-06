@@ -2,12 +2,10 @@ function mostrarEjemploSV() {
   const cobertura = document.getElementById("coberturaSV").value;
   const ejemplo = document.getElementById("ejemploSV");
 
-  // Ocultar siempre primero
-  ejemplo.classList.add("oculto");
-
-  // Mostrar solo si es combinadas
   if (cobertura === "Combinadas") {
     ejemplo.classList.remove("oculto");
+  } else {
+    ejemplo.classList.add("oculto");
   }
 }
 
