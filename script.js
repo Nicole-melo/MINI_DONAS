@@ -240,7 +240,6 @@ function generarSalsas() {
   const opcionesSalsas = [
     "Chocolate",
     "Arequipe",
-    "Fresa",
     "Caramelo",
     "Leche condensada"
   ];
@@ -277,11 +276,11 @@ function generarToppings() {
 
   const opcionesToppings = [
     "Chispas de chocolate",
-    "Chocolatina",
     "Oreo",
-    "Maní",
-    "Coco",
-    "Gomitas"
+    "Gomitas",
+    "Minichips",
+    "M&M",
+    "Gragea"
   ];
 
   for (let i = 1; i <= cantidad; i++) {
@@ -307,6 +306,7 @@ select.appendChild(sinTopping);
     contenedor.appendChild(select);
   }
 }
+
 
 
 
