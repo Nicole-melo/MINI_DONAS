@@ -232,7 +232,7 @@ function mostrarColorCombo() {
 
 
 function generarSalsas() {
-  const combo = document.getElementById("combo").value;
+  const combo = document.getElementById("cantidad1").value;
   const contSalsas = document.getElementById("contenedorSalsas");
   const contToppings = document.getElementById("contenedorToppings");
 
@@ -292,5 +292,6 @@ function generarSalsas() {
     contToppings.appendChild(select);
   }
 }
+
 
 
