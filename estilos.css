@@ -217,16 +217,24 @@ body::before {
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
   margin-top: 10px;
 }
-.card img {
-  width: 100%;          /* ocupa todo el ancho de la card */
-  height: 220px;        /* alto fijo (ajústalo a tu gusto) */
-  object-fit: cover;    /* recorta sin deformar */
-  border-radius: 16px;  /* esquinas redonditas */
-  margin-bottom: 12px;  /* espacio con el texto */
-}
-
-
 .oculto {
   display: none;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;        /* celular */
+  object-fit: contain; /* no recorta las donas */
+  background: #fff0f5; /* rosadito */
+  border-radius: 16px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* PC */
+@media (min-width: 768px) {
+  .card img {
+    height: 260px;
+  }
 }
 
