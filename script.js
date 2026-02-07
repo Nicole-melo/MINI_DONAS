@@ -231,7 +231,6 @@ function mostrarColorCombo() {
 
 
 
-// ===== MINI DONAS POR COMBO =====
 function generarSalsas() {
   const combo = document.getElementById("combo").value;
   const contSalsas = document.getElementById("contenedor-salsas");
@@ -245,22 +244,26 @@ function generarSalsas() {
 
   // reglas por combo
   const reglas = {
-    4: { salsas: 1, toppings: 1 },
-    6: { salsas: 2, toppings: 2 },
-    8: { salsas: 3, toppings: 2 },
-    10:{ salsas: 3, toppings: 3 },
-    12:{ salsas: 4, toppings: 3 },
-    14:{ salsas: 4, toppings: 4 }
+    "4": { salsas: 1, toppings: 1 },
+    "6": { salsas: 2, toppings: 2 },
+    "8": { salsas: 3, toppings: 2 },
+    "10": { salsas: 3, toppings: 3 },
+    "12": { salsas: 4, toppings: 3 },
+    "14": { salsas: 4, toppings: 4 }
   };
 
   const { salsas, toppings } = reglas[combo];
+
+  // mostrar contenedores
+  contSalsas.style.display = "block";
+  contToppings.style.display = "block";
 
   // opciones disponibles
   const listaSalsas = [
     "Chocolate",
     "Arequipe",
     "Fresa",
-    "Chocolate blanco"
+    "Caramelo"
   ];
 
   const listaToppings = [
@@ -273,16 +276,18 @@ function generarSalsas() {
 
   // crear selects de salsas
   for (let i = 1; i <= salsas; i++) {
-    let select = document.createElement("select");
-    select.innerHTML = `<option value="">Salsa ${i}</option>` +
+    const select = document.createElement("select");
+    select.innerHTML =
+      `<option value="">🍫 Salsa ${i}</option>` +
       listaSalsas.map(s => `<option value="${s}">${s}</option>`).join("");
     contSalsas.appendChild(select);
   }
 
   // crear selects de toppings
   for (let i = 1; i <= toppings; i++) {
-    let select = document.createElement("select");
-    select.innerHTML = `<option value="">Topping ${i}</option>` +
+    const select = document.createElement("select");
+    select.innerHTML =
+      `<option value="">✨ Topping ${i}</option>` +
       listaToppings.map(t => `<option value="${t}">${t}</option>`).join("");
     contToppings.appendChild(select);
   }
