@@ -33,7 +33,7 @@ function pedirWhatsAppSanValentin() {
   }
 
   let texto = `Hola 😊 quiero pedir:
-💘 Mini donas San Valentín
+💘 MINI DONAS SAN VALENTIN 💘
 🍩 Cantidad: ${cantidad}
 🍫 Cobertura: ${cobertura}
 `;
