@@ -233,12 +233,12 @@ function mostrarColorCombo() {
 
 function generarSalsas() {
   const combo = document.getElementById("combo").value;
-  const contSalsas = document.getElementById("contenedor-salsas");
-  const contToppings = document.getElementById("contenedor-toppings");
+  const contenedorSalsas = document.getElementById("contenedor-salsas");
+  const contenedorToppings = document.getElementById("contenedor-toppings");
 
   // limpiar antes de volver a crear
-  contSalsas.innerHTML = "";
-  contToppings.innerHTML = "";
+  contenedorSalsas.innerHTML = "";
+  contenedorToppings.innerHTML = "";
 
   if (combo === "") return;
 
@@ -255,8 +255,8 @@ function generarSalsas() {
   const { salsas, toppings } = reglas[combo];
 
   // mostrar contenedores
-  contSalsas.style.display = "block";
-  contToppings.style.display = "block";
+  contenedorSalsas.style.display = "block";
+  contenedorToppings.style.display = "block";
 
   // opciones disponibles
   const listaSalsas = [
@@ -280,7 +280,7 @@ function generarSalsas() {
     select.innerHTML =
       `<option value="">🍫 Salsa ${i}</option>` +
       listaSalsas.map(s => `<option value="${s}">${s}</option>`).join("");
-    contSalsas.appendChild(select);
+    contenedorSalsas.appendChild(select);
   }
 
   // crear selects de toppings
@@ -289,6 +289,7 @@ function generarSalsas() {
     select.innerHTML =
       `<option value="">✨ Topping ${i}</option>` +
       listaToppings.map(t => `<option value="${t}">${t}</option>`).join("");
-    contToppings.appendChild(select);
+    contenedorToppings.appendChild(select);
   }
 }
+
